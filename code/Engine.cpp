@@ -21,9 +21,10 @@ void Engine::run()
     // Main loop: runs as long as the window is open
     while (m_Window.isOpen())
     {
-        clock.restart(); // Restart the clock for each loop
+        Time elapsed = clock.restart(); // Restart the clock for each loop
+        float elapsedSeconds = elapsed.asSeconds();
         input(); // Process input events
-        update(clock.getElapsedTime().asSeconds()); // Update particle states based on elapsed time
+        update(elapsedSeconds); // Update particle states based on elapsed time
         draw(); // Draw particles on the window
     }
 }
