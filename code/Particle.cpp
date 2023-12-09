@@ -1,6 +1,47 @@
 #include "Particle.h"
 
 
+Particle::Particle(RenderTarget& target, int numPoints, Vector2i mouseClickPosition) : m_A(2, numPoints)
+{
+    m_ttl = TTL;
+    m_numPoints = numPoints;
+    m_radiansPerSec = (float)rand() / (RAND_MAX) * MY_PI;
+    m_cartesianPlane.setCenter(0, 0);
+    m_cartesianPlane.setSize(target.getSize().x, (-1, 0) * target.getSize().y);
+    m_centerCoordinate = target.mapPixelToCoords(mouseClickPosition, m_cartesianPlane);
+    constexpr int MAXVEL = 500;
+    constexpr int MINVEL = 100;
+    m_vx = (rand() % MAXVEL - MINVEL + 1) - MINVEL;
+    if (rand() % 2)
+    {
+        m_vx *= -1;
+    }
+    m_color1 = Color::White;
+    switch(rand() % 6)
+    {
+        case 0:
+            m_color2 = Color::Red;
+            break;
+        case 1:
+            m_color2 = Color::Green;
+            break;
+        case 2:
+            m_color2 = Color::Blue;
+            break;
+        case 3:
+            m_color2 = Color::Yellow;
+            break;
+        case 4:
+            m_color2 = Color::Magenta;
+            break;
+        case 5:
+            m_color2 = Color::Cyan;
+            break;
+    }
+    double theta = static_cast<double>(rand()) / RAND_MAX;
+    theta *= M_PI / 2;
+}
+
 bool Particle::almostEqual(double a, double b, double eps)
 {
 	return fabs(a - b) < eps;
