@@ -10,7 +10,7 @@ Engine::Engine()
 // Run function: Main loop of the engine
 void Engine::run()
 {
-    srand(time(0)); // Seed the random number generator
+    srand(time(0)); // Seed the random number generator for the number of points in the created particle
     Clock clock; // Clock to measure elapsed time
     cout << "Starting Particle unit tests..." << endl;
     // Create a test particle and run unit tests
