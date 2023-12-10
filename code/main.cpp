@@ -1,3 +1,6 @@
+//Created by Richard Chao and Dominic Agoncillo
+//Created for the CISP 400 Particles Project
+//----------------------------------------------//
 #include "Engine.h"
 
 int main()
