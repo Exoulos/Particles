@@ -44,9 +44,9 @@ void Engine::input()
             // Create particles on left mouse button press
             if (event.mouseButton.button == Mouse::Left)
             {
-                constexpr int NUM_PARTICLES = 5; // Number of particles to create
-                constexpr int RANDLOW = 25; // Lower bound for random number of points
-                constexpr int RANDHIGH = 50; // Upper bound for random number of points
+                constexpr int NUM_PARTICLES = 2; // Number of particles to create
+                constexpr int RANDLOW = 15; // Lower bound for random number of points
+                constexpr int RANDHIGH = 40; // Upper bound for random number of points
                 int numPoints;
                 for (int i = 0; i < NUM_PARTICLES; i++)
                 {
