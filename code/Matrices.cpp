@@ -94,7 +94,7 @@ namespace Matrices
     {
         a[0][0] = cos(theta);
 		a[0][1] = -sin(theta);
-		a[1][0]= sin(theta);
+		a[1][0] = sin(theta);
 		a[1][1] = cos(theta);
     }
 
